@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="country_codes">
+        <item>US</item>
+        <item>GB</item>
+        <item>FR</item>
+        <item>DE</item>
+    </array>
+</resources>

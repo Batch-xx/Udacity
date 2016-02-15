@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="country_codes_readable">
+        <item>United States</item>
+        <item>Great Britain</item>
+        <item>France</item>
+        <item>Germany</item>
+    </array>
+</resources>

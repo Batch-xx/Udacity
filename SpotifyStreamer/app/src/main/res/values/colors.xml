@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ss_header">#15792f</color>
+    <color name="ss_rounded_list_item_background">#a4e9b8</color>
+    <color name="ss_list_item_unselected_background">#62d985</color>
+    <color name="ss_list_item_selected_background">#b5edc5</color>
+    <color name="ss_search_background">#def7e4</color>
+    <color name="ss_border">#2dbc57</color>
+    <color name="ss_main_background">#cdf3d7</color>
+    <color name="ss_top_ten_list_item_selected_background">#29ac4c</color>
+    <color name="ss_top_ten_list_item_unselected_background">#bdefcb</color>
+    <color name="ss_player_background">#62d985</color>
+    <color name="ss_player_control_text">#ffffff</color>
+    <color name="ss_font">#274e13</color>
+    <color name="grey">#cccccc</color>
+    <color name="spotify_green">#239441</color>
+    <color name="spotify_dark_green">#155a28</color>
+</resources>

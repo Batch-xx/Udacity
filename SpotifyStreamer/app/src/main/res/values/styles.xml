@@ -1,0 +1,25 @@
+<resources>
+
+<!-- Base application theme. -->
+<style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+    <item name="colorPrimary">@color/spotify_green</item>
+    <item name="colorPrimaryDark">@color/spotify_dark_green</item>
+</style>
+
+<!-- Main activity theme. -->
+<style name="SpotifyTheme" parent="AppTheme">
+    <item name="actionBarStyle">@style/ActionBar.Solid.Spotify.Title</item>
+</style>
+
+<!-- main activity action bar styles -->
+<style name="ActionBar.Solid.Spotify.Title" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+    <item name="displayOptions">showTitle|showHome</item>
+</style>
+
+<!-- Style for forecast listview -->
+<style name="SpotifyListStyle">
+    <!-- Here it's a stub.  In screens of sufficient width, this style includes modifications
+    for two-pane layout -->
+</style>
+
+</resources>

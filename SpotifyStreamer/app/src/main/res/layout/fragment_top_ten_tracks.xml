@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ss_fragment_TopTenTracks"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.bkbatchelor.spotifystreamer.topTenTracks.TopTenTracksFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/ss_main_background"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="190dp"
+            android:layout_height="190dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_spotify_logo" />
+
+        <ListView
+            android:id="@+id/top_ten_body_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:divider="@color/ss_main_background"
+            android:dividerHeight="1dp"
+            android:choiceMode="singleChoice"
+            tools:listitem="list_item_track"/>
+
+    </FrameLayout>
+</LinearLayout>

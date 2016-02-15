@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:gravity="left"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/ss_border"></LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="@color/ss_main_background">
+
+            <!-- Artist Album image -->
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@color/ss_main_background">
+                <ImageView
+                    android:id="@+id/ss_notif_album_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp"/>
+            </FrameLayout>
+            <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/ss_border"></LinearLayout>
+
+            <!-- Artist, album, track -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/ss_notif_artist_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/ss_header"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    android:layout_margin="5dp"
+                    tools:text="ColdPlay"
+                    />
+                <TextView
+                    android:id="@+id/ss_notif_album_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textStyle="normal"
+                    android:textColor="@color/ss_header"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="10dp"
+                    tools:text="In My Peace"
+                    />
+                <TextView
+                    android:id="@+id/ss_notif_track_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textStyle="normal"
+                    android:textColor="@color/ss_header"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="10dp"
+                    tools:text="A Rush of Blood to the head"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@color/ss_player_background">
+
+            <!-- play control -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <!--previous-->
+                <ImageView
+                    android:id="@+id/ss_notif_player_previous"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_skip_previous_black_36dp"/>
+                <!-- play -->
+                <ImageView
+                    android:id="@+id/ss_notif_player_play"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/ic_pause_black_36dp"/>
+                <!-- next -->
+                <ImageView
+                    android:id="@+id/ss_notif_player_next"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/ic_skip_next_black_36dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

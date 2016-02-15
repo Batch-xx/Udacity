@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.bkbatchelor.spotifystreamer.main.MainActivity">
+    <item android:id="@+id/ss_action_now_playing"
+        android:title="Now Playing"
+        app:showAsAction="ifRoom|withText"/>
+    <item android:id="@+id/ss_country_settings" android:title="@string/ss_country_code_settings"
+        android:orderInCategory="100" app:showAsAction="never" />
+</menu>

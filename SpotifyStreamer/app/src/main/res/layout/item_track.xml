@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ss_track_unselected_background"
+    android:layout_marginStart="3dp"
+    android:layout_marginEnd="3dp">
+
+    <!-- icon -->
+    <ImageView
+        android:id="@+id/ss_track_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical|start"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/ic_spotify_128x128"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="1">
+            <!-- Track -->
+            <TextView
+                android:id="@+id/ss_track_track"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="#274e13"
+                android:textStyle="bold"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center_horizontal"
+                android:lines="1"
+                android:ellipsize="end"
+                tools:text="Don't Panic"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" />
+
+            <!-- Album -->
+            <TextView
+                android:id="@+id/ss_track_album"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:textColor="#274e13"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_gravity="center_horizontal"
+                android:lines="1"
+                android:ellipsize="end"
+                tools:text="Parachutes"
+                android:layout_marginRight="5dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="-2dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_thumb_up"/>
+            <TextView
+                android:id="@+id/ss_track_popularity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textStyle="italic"
+                android:textColor="@color/ss_font"
+                tools:text="90"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textStyle="normal"
+                android:textColor="@color/ss_font"
+                android:text="%"/>
+        </LinearLayout>
+
+</LinearLayout>

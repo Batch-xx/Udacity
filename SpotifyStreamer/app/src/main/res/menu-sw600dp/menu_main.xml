@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.bkbatchelor.spotifystreamer.main.MainActivity">
+    <item android:id="@+id/ss_action_now_playing"
+        android:title="Now Playing"
+        app:showAsAction="ifRoom|withText"/>
+    <item android:id="@+id/ss_action_share"
+        android:title="@string/ss_action_settings"
+        android:icon="@drawable/ic_share_variant_white_36dp"
+        app:actionProviderClass="android.support.v7.widget.ShareActionProvider"
+        android:visible="false"
+        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/ss_external_play"
+        android:title="@string/ss_external_play"
+        android:visible="false"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/ss_country_settings" android:title="@string/ss_country_code_settings"
+        android:orderInCategory="100" app:showAsAction="never" />
+</menu>

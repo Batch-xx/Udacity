@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="country_code"
+        android:title="Country"
+        android:summary="%s"
+        android:entries="@array/country_codes_readable"
+        android:entryValues="@array/country_codes"
+        android:defaultValue="US"/>
+    <CheckBoxPreference
+        android:key="show_notification"
+        android:title="Show notifications"
+        android:defaultValue="true"/>
+</PreferenceScreen>

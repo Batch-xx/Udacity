@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_item">
+
+    <FrameLayout
+        android:id="@+id/widget_header"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/widget_header"
+        android:layout_alignParentTop="true">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/widget_header_color"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/widget_title"
+            android:contentDescription="@string/widget_title"/>
+    </FrameLayout>
+
+    <ListView
+        android:id="@+id/widget_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/widget_header"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0sp"
+        tools:listitem="@layout/scores_list_item"
+        tools:visibility="visible">
+    </ListView>
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/widget_header"
+        android:gravity="center"
+        android:textColor="@color/widget_font_color"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="@string/widget_empty_view_text"
+        tools:visibility="invisible"/>
+</RelativeLayout>

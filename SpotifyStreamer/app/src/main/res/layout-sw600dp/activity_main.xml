@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="com.bkbatchelor.spotifystreamer.main.MainActivity">
+
+    <fragment
+        android:id="@+id/ss_fragment_artist_search"
+        android:name="com.bkbatchelor.spotifystreamer.artistSearch.ArtistSearchFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        tools:layout="@layout/fragment_search"/>
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/ss_border"/>
+
+    <FrameLayout
+        android:id="@+id/ss_TopTenTracks_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+</LinearLayout>

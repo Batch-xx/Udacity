@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:id="@+id/ss_player_fragment"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="center_horizontal|center_vertical"
+        android:padding="3dp"
+        android:background="@color/ss_search_background">
+        <!--Album art -->
+        <ImageView
+            android:id="@+id/ss_player_album_art"
+            android:layout_width="@dimen/ss_album_art_height"
+            android:layout_height="@dimen/ss_album_art_height"
+            android:elevation="4dp"
+            android:background="@drawable/ss_image_shadow_pane"/>
+        <!-- Player controller -->
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/ss_header"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+            <!-- Track Info -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/ss_main_background"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/ss_artist_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    android:textColor="#274e13"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    tools:text="Coldplay"/>
+
+                <TextView
+                    android:id="@+id/ss_album_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="16dp"
+                    android:textStyle="normal"
+                    android:textColor="#274e13"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    tools:text="Ghost Stories"/>
+
+                <TextView
+                    android:id="@+id/ss_track_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="16dp"
+                    android:textStyle="normal"
+                    android:textColor="#274e13"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    tools:text="Track A Sky Full of Stars"/>
+            </LinearLayout>
+
+        <!-- Player Controller -->
+        <LinearLayout
+            android:id="@+id/ss_player_controller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#62d985"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/ss_border" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <!--time played -->
+                <TextView
+                    android:id="@+id/ss_player_time_played"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:textColor="@color/ss_player_control_text"
+                    android:textSize="18sp"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    tools:text="2:14"/>
+                <!-- play control -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <!--previous-->
+                    <ImageView
+                        android:id="@+id/ss_player_previous"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/ss_control_button"
+                        android:src="@drawable/ic_skip_previous_black_36dp"/>
+                    <!-- play -->
+                    <ImageView
+                        android:id="@+id/ss_player_play"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/ss_control_button"
+                        android:src="@drawable/ic_play_black_36dp"/>
+                    <!-- next -->
+                    <ImageView
+                        android:id="@+id/ss_player_next"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/ss_control_button"
+                        android:src="@drawable/ic_skip_next_black_36dp"/>
+                </LinearLayout>
+
+                <!--duration -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="bottom"
+                    android:layout_weight="1">
+                    <TextView
+                        android:id="@+id/ss_player_duration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginRight="10dp"
+                        android:gravity="end"
+                        android:textColor="@color/ss_player_control_text"
+                        android:textSize="18dp"
+                        tools:text="(3:20)" />
+                    <TextView
+                        android:id="@+id/ss_player_preview_duration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginRight="16dp"
+                        android:gravity="end"
+                        android:textColor="@color/ss_player_control_text"
+                        android:textSize="18dp"
+                        tools:text="0:30" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <SeekBar
+                    android:id="@+id/ss_player_seekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical" />
+            </FrameLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
