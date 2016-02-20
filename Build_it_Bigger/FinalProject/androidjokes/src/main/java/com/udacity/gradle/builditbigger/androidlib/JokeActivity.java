@@ -19,8 +19,5 @@ public class JokeActivity extends AppCompatActivity {
 
             Toast.makeText(this, joke, Toast.LENGTH_SHORT).show();
         }
-
     }
-
-
 }
