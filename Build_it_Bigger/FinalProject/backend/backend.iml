@@ -41,9 +41,10 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="javajokes" exported="" />
-    <orderEntry type="library" exported="" name="C__gradle_caches_modules_2_files_2_1_com_google_appengine_appengine_endpoints_1_9_28_bf2e8a74bd28e388b3487fc78a0c7adfa592fd5d_appengine_endpoints_1_9_28_jar" level="project" />
-    <orderEntry type="library" exported="" name="C__gradle_caches_modules_2_files_2_1_com_google_appengine_appengine_endpoints_deps_1_9_28_4d370828f843fc24829034453e065b5588a43f59_appengine_endpoints_deps_1_9_28_jar" level="project" />
-    <orderEntry type="library" exported="" name="C__gradle_caches_modules_2_files_2_1_javax_servlet_servlet_api_2_5_5959582d97d8b61f4d154ca9e495aafd16726e34_servlet_api_2_5_jar" level="project" />
-    <orderEntry type="library" exported="" name="C__gradle_caches_modules_2_files_2_1_com_google_appengine_appengine_api_1_0_sdk_1_9_28_e92c18272b555027d9ec666e7a89162f10638314_appengine_api_1_0_sdk_1_9_28_jar" level="project" />
+    <orderEntry type="library" exported="" name="appengine-endpoints-1.9.28" level="project" />
+    <orderEntry type="library" exported="" name="appengine-endpoints-deps-1.9.28" level="project" />
+    <orderEntry type="library" exported="" name="servlet-api-2.5" level="project" />
+    <orderEntry type="library" exported="" name="appengine-api-1.0-sdk-1.9.28" level="project" />
+    <orderEntry type="library" exported="" name="backend.backend-android-endpoints" level="project" />
   </component>
 </module>
