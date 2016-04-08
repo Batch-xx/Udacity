@@ -1,3 +1,3 @@
-<img src="./udacity.png" width="2400" height="1260"/>
+<img src="./udacity.png" width="1200" height="630"/>
 
 # Udacity Android Nanodegree Projects
