@@ -1,4 +1,4 @@
-# Spotify-Streamer
+# Alexandria
 This project was an assignment for Udacity's Android Nanodegree. 
 
 ## Project Overview
