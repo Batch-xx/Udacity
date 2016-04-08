@@ -20,7 +20,7 @@ For exceeding specifications requirements:
 
 ## Phone Screenshot
 
-<img src="/art/phone/shot1.png" width="270" height="480"/>
+<img src="Udacity/SpotifyStreamer/art/phone/shot1.png" width="270" height="480"/>
 <img src="/art/phone/shot2.png" width="270" height="480"/>
 <img src="/art/phone/shot3.png" width="270" height="480"/>
 <img src="/art/phone/shot4.png" width="270" height="480"/>
