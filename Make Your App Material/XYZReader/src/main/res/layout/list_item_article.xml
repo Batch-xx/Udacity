@@ -16,9 +16,14 @@
         android:orientation="horizontal">
 
         <!--suppress AndroidLintContentDescription -->
-        <com.example.xyzreader.ui.DynamicHeightNetworkImageView
-            android:id="@+id/thumbnail"
-            android:layout_width="150dp"
+        <!--<com.example.xyzreader.ui.DynamicHeightNetworkImageView-->
+            <!--android:id="@+id/thumbnail"-->
+            <!--android:layout_width="150dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@color/photo_placeholder" />-->
+        <ImageView
+            android:id="@+id/thumbnail_port"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/photo_placeholder" />
         <LinearLayout

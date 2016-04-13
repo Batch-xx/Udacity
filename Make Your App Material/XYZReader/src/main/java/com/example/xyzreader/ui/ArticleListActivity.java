@@ -14,8 +14,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.text.format.DateUtils;
-import android.util.TypedValue;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -152,15 +150,24 @@ public class ArticleListActivity extends ActionBarActivity implements
                             DateUtils.FORMAT_ABBREV_ALL).toString()
                             + " by "
                             + mCursor.getString(ArticleLoader.Query.AUTHOR));
-//            Picasso.with(getApplicationContext())
-//                    .load( mCursor.getString(ArticleLoader.Query.THUMB_URL))
-//                    .resize(100,100)
-//                    .centerCrop()
-//                    .into(holder.thumbnailView);
-            holder.thumbnailView.setImageUrl(
-                    mCursor.getString(ArticleLoader.Query.THUMB_URL),
-                    ImageLoaderHelper.getInstance(ArticleListActivity.this).getImageLoader());
-            holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
+            int orient  = ArticleListActivity.this.getWindowManager().getDefaultDisplay().getRotation();
+            if(orient == 0) {
+                Picasso.with(ArticleListActivity.this)
+                        .load(mCursor.getString(ArticleLoader.Query.THUMB_URL))
+                        .centerCrop()
+                        .resize(300, 300)
+                        .into(holder.thumbnailView_port);
+            }else {
+                Picasso.with(ArticleListActivity.this)
+                        .load(mCursor.getString(ArticleLoader.Query.THUMB_URL))
+                        .centerCrop()
+                        .resize(600, 600)
+                        .into(holder.thumbnailView_land);
+            }
+//            holder.thumbnailView_port.setImageUrl(
+//                    mCursor.getString(ArticleLoader.Query.THUMB_URL),
+//                    ImageLoaderHelper.getInstance(ArticleListActivity.this).getImageLoader());
+//            holder.thumbnailView_port.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
         }
 
         @Override
@@ -170,14 +177,16 @@ public class ArticleListActivity extends ActionBarActivity implements
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public DynamicHeightNetworkImageView thumbnailView;
-//        public ImageView thumbnailView;
+        public ImageView thumbnailView_port;
+        public ImageView thumbnailView_land;
         public TextView titleView;
         public TextView subtitleView;
 
         public ViewHolder(View view) {
             super(view);
-            thumbnailView = (DynamicHeightNetworkImageView) view.findViewById(R.id.thumbnail);
+
+            thumbnailView_port = (ImageView) view.findViewById(R.id.thumbnail_port);
+            thumbnailView_land = (ImageView) view.findViewById(R.id.thumbnail_land);
             titleView = (TextView) view.findViewById(R.id.article_title);
             subtitleView = (TextView) view.findViewById(R.id.article_subtitle);
         }
