@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\build\\intermediates\\res\\merged\\debug\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+        "outputFile": "F:\\Udacity\\Make Your App Material\\XYZReader\\build\\intermediates\\res\\merged\\debug\\values-sw600dp-v13\\values-sw600dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 120
                 },
                 "from": {
-                    "file": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.0.0\\res\\values-sw600dp-v13\\values.xml",
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.0.0\\res\\values-sw600dp-v13\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 190
                 },
                 "from": {
-                    "file": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.0.0\\res\\values-sw600dp-v13\\values.xml",
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.0.0\\res\\values-sw600dp-v13\\values.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 249
                 },
                 "from": {
-                    "file": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.0.0\\res\\values-sw600dp-v13\\values.xml",
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.0.0\\res\\values-sw600dp-v13\\values.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -68,7 +68,7 @@
                     "endOffset": 320
                 },
                 "from": {
-                    "file": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.0.0\\res\\values-sw600dp-v13\\values.xml",
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.0.0\\res\\values-sw600dp-v13\\values.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -87,7 +87,7 @@
                     "endOffset": 388
                 },
                 "from": {
-                    "file": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.0.0\\res\\values-sw600dp-v13\\values.xml",
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.0.0\\res\\values-sw600dp-v13\\values.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -106,13 +106,13 @@
                     "endOffset": 445
                 },
                 "from": {
-                    "file": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\macro_layout.xml",
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\macro_layout.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 325,
+                        "startOffset": 332,
                         "endColumn": 56,
-                        "endOffset": 377
+                        "endOffset": 384
                     }
                 }
             },
@@ -125,13 +125,13 @@
                     "endOffset": 498
                 },
                 "from": {
-                    "file": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\dimens.xml",
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\dimens.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 90,
+                        "startOffset": 93,
                         "endColumn": 52,
-                        "endOffset": 138
+                        "endOffset": 141
                     }
                 }
             },
@@ -144,13 +144,13 @@
                     "endOffset": 553
                 },
                 "from": {
-                    "file": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\macro_layout.xml",
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\macro_layout.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 88,
+                        "startOffset": 91,
                         "endColumn": 54,
-                        "endOffset": 138
+                        "endOffset": 141
                     }
                 }
             },
@@ -163,13 +163,13 @@
                     "endOffset": 610
                 },
                 "from": {
-                    "file": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\macro_layout.xml",
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\macro_layout.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 143,
+                        "startOffset": 147,
                         "endColumn": 56,
-                        "endOffset": 195
+                        "endOffset": 199
                     }
                 }
             },
@@ -182,13 +182,13 @@
                     "endOffset": 676
                 },
                 "from": {
-                    "file": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\macro_layout.xml",
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\macro_layout.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 259,
+                        "startOffset": 265,
                         "endColumn": 65,
-                        "endOffset": 320
+                        "endOffset": 326
                     }
                 }
             },
@@ -201,13 +201,13 @@
                     "endOffset": 735
                 },
                 "from": {
-                    "file": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\macro_layout.xml",
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\macro_layout.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 200,
+                        "startOffset": 205,
                         "endColumn": 58,
-                        "endOffset": 254
+                        "endOffset": 259
                     }
                 }
             },
@@ -220,13 +220,13 @@
                     "endOffset": 787
                 },
                 "from": {
-                    "file": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\macro_layout.xml",
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\macro_layout.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 36,
+                        "startOffset": 38,
                         "endColumn": 51,
-                        "endOffset": 83
+                        "endOffset": 85
                     }
                 }
             },
@@ -239,13 +239,13 @@
                     "endOffset": 841
                 },
                 "from": {
-                    "file": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\dimens.xml",
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\dimens.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 36,
+                        "startOffset": 38,
                         "endColumn": 53,
-                        "endOffset": 85
+                        "endOffset": 87
                     }
                 }
             },
@@ -258,13 +258,13 @@
                     "endOffset": 883
                 },
                 "from": {
-                    "file": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\dimens.xml",
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\dimens.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 238,
+                        "startOffset": 243,
                         "endColumn": 41,
-                        "endOffset": 275
+                        "endOffset": 280
                     }
                 }
             },
@@ -277,13 +277,13 @@
                     "endOffset": 978
                 },
                 "from": {
-                    "file": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\dimens.xml",
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-sw600dp\\dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 143,
+                        "startOffset": 147,
                         "endColumn": 94,
-                        "endOffset": 233
+                        "endOffset": 237
                     }
                 }
             },
@@ -296,7 +296,7 @@
                     "endOffset": 1033
                 },
                 "from": {
-                    "file": "C:\\Projects\\Udacity\\Make Your App Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.0.0\\res\\values-sw600dp-v13\\values.xml",
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.0.0\\res\\values-sw600dp-v13\\values.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
