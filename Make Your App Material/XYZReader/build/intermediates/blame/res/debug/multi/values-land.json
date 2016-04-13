@@ -146,11 +146,11 @@
                 "from": {
                     "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-land\\macro_layout.xml",
                     "position": {
-                        "startLine": 3,
+                        "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 91,
+                        "startOffset": 161,
                         "endColumn": 57,
-                        "endOffset": 144
+                        "endOffset": 214
                     }
                 }
             },
@@ -165,11 +165,30 @@
                 "from": {
                     "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-land\\macro_layout.xml",
                     "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 108,
+                        "endColumn": 51,
+                        "endOffset": 155
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 642,
+                    "endColumn": 49,
+                    "endOffset": 687
+                },
+                "from": {
+                    "file": "F:\\Udacity\\Make Your App Material\\XYZReader\\src\\main\\res\\values-land\\macro_layout.xml",
+                    "position": {
                         "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 38,
-                        "endColumn": 51,
-                        "endOffset": 85
+                        "startOffset": 36,
+                        "endColumn": 49,
+                        "endOffset": 81
                     }
                 }
             }
