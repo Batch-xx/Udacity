@@ -22,6 +22,7 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.support.design.widget.CoordinatorLayout;
 import android.util.AttributeSet;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
@@ -29,7 +30,7 @@ import android.widget.FrameLayout;
 import com.example.xyzreader.R;
 
 
-public class DrawInsetsFrameLayout extends FrameLayout {
+public class DrawInsetsFrameLayout extends CoordinatorLayout {
     private Drawable mInsetBackground;
     private Drawable mTopInsetBackground;
     private Drawable mBottomInsetBackground;
@@ -77,44 +78,44 @@ public class DrawInsetsFrameLayout extends FrameLayout {
         postInvalidateOnAnimation();
     }
 
-    @Override
-    protected void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            requestApplyInsets();
-        }
-        if (mInsetBackground != null) {
-            mInsetBackground.setCallback(this);
-        }
-    }
+//    @Override
+//    protected void onAttachedToWindow() {
+//        super.onAttachedToWindow();
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            requestApplyInsets();
+//        }
+//        if (mInsetBackground != null) {
+//            mInsetBackground.setCallback(this);
+//        }
+//    }
 
-    @Override
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        if (mInsetBackground != null) {
-            mInsetBackground.setCallback(null);
-        }
-    }
+//    @Override
+//    protected void onDetachedFromWindow() {
+//        super.onDetachedFromWindow();
+//        if (mInsetBackground != null) {
+//            mInsetBackground.setCallback(null);
+//        }
+//    }
 
     public void setOnInsetsCallback(OnInsetsCallback onInsetsCallback) {
         mOnInsetsCallback = onInsetsCallback;
     }
 
-    @Override
-    public WindowInsets onApplyWindowInsets(WindowInsets insets) {
-        insets = super.onApplyWindowInsets(insets);
-        mInsets = new Rect(
-                insets.getSystemWindowInsetLeft(),
-                insets.getSystemWindowInsetTop(),
-                insets.getSystemWindowInsetRight(),
-                insets.getSystemWindowInsetBottom());
-        setWillNotDraw(false);
-        postInvalidateOnAnimation();
-        if (mOnInsetsCallback != null) {
-            mOnInsetsCallback.onInsetsChanged(mInsets);
-        }
-        return insets;
-    }
+//    @Override
+//    public WindowInsets onApplyWindowInsets(WindowInsets insets) {
+//        insets = super.onApplyWindowInsets(insets);
+//        mInsets = new Rect(
+//                insets.getSystemWindowInsetLeft(),
+//                insets.getSystemWindowInsetTop(),
+//                insets.getSystemWindowInsetRight(),
+//                insets.getSystemWindowInsetBottom());
+//        setWillNotDraw(false);
+//        postInvalidateOnAnimation();
+//        if (mOnInsetsCallback != null) {
+//            mOnInsetsCallback.onInsetsChanged(mInsets);
+//        }
+//        return insets;
+//    }
 
     @Override
     public void draw(Canvas canvas) {
