@@ -22,7 +22,6 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.design.widget.CoordinatorLayout;
 import android.util.AttributeSet;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
@@ -30,7 +29,7 @@ import android.widget.FrameLayout;
 import com.example.xyzreader.R;
 
 
-public class DrawInsetsFrameLayout extends CoordinatorLayout {
+public class DrawInsetsFrameLayout extends FrameLayout {
     private Drawable mInsetBackground;
     private Drawable mTopInsetBackground;
     private Drawable mBottomInsetBackground;
@@ -65,94 +64,94 @@ public class DrawInsetsFrameLayout extends CoordinatorLayout {
         a.recycle();
     }
 
-//    public void setInsetBackground(Drawable insetBackground) {
-//        if (mInsetBackground != null) {
-//            mInsetBackground.setCallback(null);
-//        }
-//
-//        if (insetBackground != null) {
-//            insetBackground.setCallback(this);
-//        }
-//
-//        mInsetBackground = insetBackground;
-//        postInvalidateOnAnimation();
-//    }
+    public void setInsetBackground(Drawable insetBackground) {
+        if (mInsetBackground != null) {
+            mInsetBackground.setCallback(null);
+        }
 
-//    @Override
-//    protected void onAttachedToWindow() {
-//        super.onAttachedToWindow();
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            requestApplyInsets();
-//        }
-//        if (mInsetBackground != null) {
-//            mInsetBackground.setCallback(this);
-//        }
-//    }
+        if (insetBackground != null) {
+            insetBackground.setCallback(this);
+        }
 
-//    @Override
-//    protected void onDetachedFromWindow() {
-//        super.onDetachedFromWindow();
-//        if (mInsetBackground != null) {
-//            mInsetBackground.setCallback(null);
-//        }
-//    }
+        mInsetBackground = insetBackground;
+        postInvalidateOnAnimation();
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            requestApplyInsets();
+        }
+        if (mInsetBackground != null) {
+            mInsetBackground.setCallback(this);
+        }
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (mInsetBackground != null) {
+            mInsetBackground.setCallback(null);
+        }
+    }
 
     public void setOnInsetsCallback(OnInsetsCallback onInsetsCallback) {
         mOnInsetsCallback = onInsetsCallback;
     }
 
-//    @Override
-//    public WindowInsets onApplyWindowInsets(WindowInsets insets) {
-//        insets = super.onApplyWindowInsets(insets);
-//        mInsets = new Rect(
-//                insets.getSystemWindowInsetLeft(),
-//                insets.getSystemWindowInsetTop(),
-//                insets.getSystemWindowInsetRight(),
-//                insets.getSystemWindowInsetBottom());
-//        setWillNotDraw(false);
-//        postInvalidateOnAnimation();
-//        if (mOnInsetsCallback != null) {
-//            mOnInsetsCallback.onInsetsChanged(mInsets);
-//        }
-//        return insets;
-//    }
+    @Override
+    public WindowInsets onApplyWindowInsets(WindowInsets insets) {
+        insets = super.onApplyWindowInsets(insets);
+        mInsets = new Rect(
+                insets.getSystemWindowInsetLeft(),
+                insets.getSystemWindowInsetTop(),
+                insets.getSystemWindowInsetRight(),
+                insets.getSystemWindowInsetBottom());
+        setWillNotDraw(false);
+        postInvalidateOnAnimation();
+        if (mOnInsetsCallback != null) {
+            mOnInsetsCallback.onInsetsChanged(mInsets);
+        }
+        return insets;
+    }
 
-//    @Override
-//    public void draw(Canvas canvas) {
-//        super.draw(canvas);
-//        int width = getWidth();
-//        int height = getHeight();
-//
-//        if (mInsets != null) {
-//            // Top
-//            mTempRect.set(0, 0, width, mInsets.top);
-//            if (mInsetBackground != null) {
-//                mInsetBackground.setBounds(mTempRect);
-//                mInsetBackground.draw(canvas);
-//            }
-//
-//            // Bottom
-//            mTempRect.set(0, height - mInsets.bottom, width, height);
-//            if (mInsetBackground != null) {
-//                mInsetBackground.setBounds(mTempRect);
-//                mInsetBackground.draw(canvas);
-//            }
-//
-//            // Left
-//            mTempRect.set(0, mInsets.top, mInsets.left, height - mInsets.bottom);
-//            if (mInsetBackground != null) {
-//                mInsetBackground.setBounds(mTempRect);
-//                mInsetBackground.draw(canvas);
-//            }
-//
-//            // Right
-//            mTempRect.set(width - mInsets.right, mInsets.top, width, height - mInsets.bottom);
-//            if (mInsetBackground != null) {
-//                mInsetBackground.setBounds(mTempRect);
-//                mInsetBackground.draw(canvas);
-//            }
-//        }
-//    }
+    @Override
+    public void draw(Canvas canvas) {
+        super.draw(canvas);
+        int width = getWidth();
+        int height = getHeight();
+
+        if (mInsets != null) {
+            // Top
+            mTempRect.set(0, 0, width, mInsets.top);
+            if (mInsetBackground != null) {
+                mInsetBackground.setBounds(mTempRect);
+                mInsetBackground.draw(canvas);
+            }
+
+            // Bottom
+            mTempRect.set(0, height - mInsets.bottom, width, height);
+            if (mInsetBackground != null) {
+                mInsetBackground.setBounds(mTempRect);
+                mInsetBackground.draw(canvas);
+            }
+
+            // Left
+            mTempRect.set(0, mInsets.top, mInsets.left, height - mInsets.bottom);
+            if (mInsetBackground != null) {
+                mInsetBackground.setBounds(mTempRect);
+                mInsetBackground.draw(canvas);
+            }
+
+            // Right
+            mTempRect.set(width - mInsets.right, mInsets.top, width, height - mInsets.bottom);
+            if (mInsetBackground != null) {
+                mInsetBackground.setBounds(mTempRect);
+                mInsetBackground.draw(canvas);
+            }
+        }
+    }
 
     public static interface OnInsetsCallback {
         public void onInsetsChanged(Rect insets);
