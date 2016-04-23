@@ -95,14 +95,17 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/share_fab"
+        android:contentDescription="@string/action_share"
         android:stateListAnimator="@anim/fab_state_list_anim"
-        android:layout_gravity="bottom|end"
+        android:layout_gravity="bottom|end|right"
         android:layout_marginRight="@dimen/fab_margin"
         android:layout_marginBottom="@dimen/fab_margin"
-        android:layout_width="@dimen/fab_width"
-        android:layout_height="@dimen/fab_height"
-        android:src="@drawable/ic_share"
-        android:elevation="@dimen/fab_elevation"
-        android:contentDescription="@string/action_share" />
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_comment_text"
+        app:useCompatPadding="false"
+        app:fabSize="mini"
+        app:elevation="@dimen/fab_elevation"
+        app:rippleColor="@color/fab_ripple"
+        app:pressedTranslationZ="@dimen/fab_height"/>
 </com.example.xyzreader.ui.DrawInsetsFrameLayout>
