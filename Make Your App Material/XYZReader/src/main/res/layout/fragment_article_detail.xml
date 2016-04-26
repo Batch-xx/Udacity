@@ -59,6 +59,7 @@
     </com.example.xyzreader.ui.ObservableScrollView>
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/article_detail_appbarlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/Theme.Bacon">
@@ -82,7 +83,7 @@
                 <ImageView
                     android:id="@+id/photo"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="@dimen/image_height"
                     android:scaleType="centerCrop" />
 
                 <View

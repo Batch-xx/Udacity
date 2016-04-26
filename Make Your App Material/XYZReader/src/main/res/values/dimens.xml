@@ -10,5 +10,7 @@
     <dimen name="fab_height">56dp</dimen>
     <dimen name="fab_width">56dp</dimen>
 
+    <dimen name="image_height">300dp</dimen>
+
 
 </resources>
