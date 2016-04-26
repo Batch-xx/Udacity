@@ -25,22 +25,6 @@
                 android:maxWidth="@dimen/detail_card_max_width"
                 android:orientation="vertical">
 
-                <!--<LinearLayout-->
-                <!--android:id="@+id/meta_bar"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="top"-->
-                <!--android:layout_marginBottom="@dimen/detail_metabar_vert_padding"-->
-                <!--android:background="#333"-->
-                <!--android:orientation="vertical"-->
-                <!--android:paddingBottom="@dimen/detail_metabar_vert_padding"-->
-                <!--android:paddingLeft="@dimen/detail_inner_horiz_margin"-->
-                <!--android:paddingRight="@dimen/detail_inner_horiz_margin"-->
-                <!--android:paddingTop="@dimen/detail_metabar_vert_padding">-->
-
-
-                <!--</LinearLayout>-->
-
                 <TextView
                     android:id="@+id/article_body"
                     style="?android:attr/textAppearanceMedium"
@@ -126,7 +110,8 @@
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="@dimen/toolbar_height"
+                android:elevation="@dimen/toolbar_elevation"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
@@ -145,7 +130,7 @@
         android:stateListAnimator="@anim/fab_state_list_anim"
         app:elevation="@dimen/fab_elevation"
         app:fabSize="mini"
-        app:pressedTranslationZ="@dimen/fab_height"
+        app:pressedTranslationZ="@dimen/fab_pressed"
         app:rippleColor="@color/fab_ripple"
         app:useCompatPadding="false" />
 </com.example.xyzreader.ui.DrawInsetsFrameLayout>
