@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="gpuimage-library-1.2.3">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/jp.co.cyberagent.android.gpuimage/gpuimage-library/1.2.3/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/jp.co.cyberagent.android.gpuimage/gpuimage-library/1.2.3/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://C:/gradle/caches/modules-2/files-2.1/jp.co.cyberagent.android.gpuimage/gpuimage-library/1.2.3/7b7d34fed7bc19431c49f2f4b181d00759e6539e/gpuimage-library-1.2.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

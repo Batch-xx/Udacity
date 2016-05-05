@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -38,16 +36,16 @@ import com.example.xyzreader.data.ArticleLoader;
 public class ArticleDetailFragment extends Fragment implements
         LoaderManager.LoaderCallbacks<Cursor> {
     private static final String TAG = "ArticleDetailFragment";
-
     public static final String ARG_ITEM_ID = "item_id";
     private static final float PARALLAX_FACTOR = 1.25f;
+    private static final float PERCENTAGE_TO_SHOW_TITLE_AT_TOOLBAR  = 0.9f;
 
     private Cursor mCursor;
     private long mItemId;
     private View mRootView;
     private int mMutedColor = 0xFF333333;
     private ObservableScrollView mScrollView;
-    private DrawInsetsFrameLayout mDrawInsetsFrameLayout;
+//    private DrawInsetsFrameLayout mDrawInsetsFrameLayout;
     private ColorDrawable mStatusBarColorDrawable;
 
     private int mTopInset;
@@ -108,10 +106,18 @@ public class ArticleDetailFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
-        mDrawInsetsFrameLayout = (DrawInsetsFrameLayout)
-                mRootView.findViewById(R.id.draw_insets_frame_layout);
+//        mDrawInsetsFrameLayout = (DrawInsetsFrameLayout)
+//                mRootView.findViewById(R.id.draw_insets_frame_layout);
 
-        mAppBarLayout = (AppBarLayout)mRootView.findViewById(R.id.article_detail_appbarlayout);
+        mAppBarLayout = (AppBarLayout)mRootView.findViewById(R.id.article_detail_app_bar_layout);
+
+        mAppBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                int maxScroll = mAppBarLayout.getTotalScrollRange();
+                float percentage = (float)Math.abs(verticalOffset)/(float)maxScroll;
+            }
+        });
 
         if(savedInstanceState != null){
             if(savedInstanceState.getBoolean(IS_EXPANDED)){
@@ -144,6 +150,16 @@ public class ArticleDetailFragment extends Fragment implements
         return mRootView;
     }
 
+    private void handleToolbarVisiblity(float percentage){
+        if(percentage >= PERCENTAGE_TO_SHOW_TITLE_AT_TOOLBAR){
+             //make toolbar visible
+
+        }else{
+            //toolbar invisible
+        }
+
+    }
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         boolean fullyExpanded =  (mAppBarLayout.getHeight() - mAppBarLayout.getBottom()) == 0;
@@ -152,6 +168,7 @@ public class ArticleDetailFragment extends Fragment implements
 
         super.onSaveInstanceState(outState);
     }
+
 
 
     static float progress(float v, float min, float max) {
