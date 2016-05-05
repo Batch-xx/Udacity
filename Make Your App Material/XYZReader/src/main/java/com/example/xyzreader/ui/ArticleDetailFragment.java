@@ -13,6 +13,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.graphics.Palette;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
@@ -84,7 +85,8 @@ public class ArticleDetailFragment extends Fragment implements
         mIsCard = getResources().getBoolean(R.bool.detail_is_card);
         mStatusBarFullOpacityBottom = getResources().getDimensionPixelSize(
                 R.dimen.detail_card_top_margin);
-        setHasOptionsMenu(true);
+
+        setHasOptionsMenu(false);
     }
 
     public ArticleDetailActivity getActivityCast() {
@@ -106,8 +108,24 @@ public class ArticleDetailFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
-//        mDrawInsetsFrameLayout = (DrawInsetsFrameLayout)
-//                mRootView.findViewById(R.id.draw_insets_frame_layout);
+        Toolbar toolbar = (Toolbar)mRootView.findViewById(R.id.toolbar);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivityCast().onSupportNavigateUp();
+            }
+        });
+        getActivityCast().setSupportActionBar(toolbar);
+        getActivityCast().getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
+
+        CollapsingToolbarLayout collapsingToolbarLayout =
+                (CollapsingToolbarLayout)mRootView.findViewById(R.id.collapsing_toolbar);
+
+        collapsingToolbarLayout.setExpandedTitleColor(getResources()
+                .getColor(android.R.color.transparent));
+        collapsingToolbarLayout.setCollapsedTitleTextColor(getResources().getColor(android.R.color.white));
 
         mAppBarLayout = (AppBarLayout)mRootView.findViewById(R.id.article_detail_app_bar_layout);
 
@@ -226,6 +244,10 @@ public class ArticleDetailFragment extends Fragment implements
 
                                 collapsingToolbarLayout.setContentScrimColor(mMutedColor);
 
+                                TextView titleTextView =  (TextView)mRootView.findViewById(R.id.article_title);
+                                if(titleTextView!= null) {
+                                    collapsingToolbarLayout.setTitle(titleTextView.getText().toString());
+                                }
                             }
                         }
 
