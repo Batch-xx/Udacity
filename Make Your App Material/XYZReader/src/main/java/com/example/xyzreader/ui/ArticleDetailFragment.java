@@ -108,6 +108,8 @@ public class ArticleDetailFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
+        ImageView photo = (ImageView)mRootView.findViewById(R.id.photo);
+        photo.setTransitionName("transition_image" + mItemId);
         Toolbar toolbar = (Toolbar)mRootView.findViewById(R.id.toolbar);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

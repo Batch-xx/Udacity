@@ -142,12 +142,13 @@ public class ArticleListActivity extends AppCompatActivity implements
                 public void onClick(View view) {
 
                      DynamicHeightNetworkImageView imageView =
-                            (DynamicHeightNetworkImageView) findViewById(R.id.thumbnail);
+                            (DynamicHeightNetworkImageView) view.findViewById(R.id.thumbnail);
+                    imageView.setTransitionName("transition_image" + getItemId(vh.getAdapterPosition()));
                      ActivityOptions options = ActivityOptions
                             .makeSceneTransitionAnimation(
                                     mParent
                                     , imageView
-                                    , "transition_image");
+                                    , imageView.getTransitionName());
 
                     startActivity(new Intent(Intent.ACTION_VIEW,
                                     ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())))
