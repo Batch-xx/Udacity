@@ -18,7 +18,13 @@
 <resources>
 
     <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
-
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/change_image_transition
+        </item>
+        <item name="android:windowSharedElementExitTransition">
+            @transition/change_image_transition
+        </item>
     </style>
 
     <style name="Theme.Bacon.Detail">
