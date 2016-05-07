@@ -40,6 +40,11 @@ public class ArticleListActivity extends AppCompatActivity implements
     private Toolbar mToolbar;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
+    private Bundle mReenterBundle;
+    private int mCurrentPosition;
+    private int mStartingPosition;
+    final static String EXTRA_STARTING_POSITION = "extra_starting_position";
+    final static String EXTRA_CURRENT_POSITION = "extra_current_position";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,9 +122,22 @@ public class ArticleListActivity extends AppCompatActivity implements
         mRecyclerView.setAdapter(null);
     }
 
+    @Override
+    public void onActivityReenter(int resultCode, Intent data) {
+        super.onActivityReenter(resultCode, data);
+        mReenterBundle = new Bundle(data.getExtras());
+
+        mCurrentPosition = mReenterBundle.getInt(EXTRA_CURRENT_POSITION);
+        mStartingPosition = mReenterBundle.getInt(EXTRA_STARTING_POSITION);
+        if(mStartingPosition != mCurrentPosition){
+            mRecyclerView.scrollToPosition(mCurrentPosition);
+        }
+    }
+
     private class Adapter extends RecyclerView.Adapter<ViewHolder> {
         private Cursor mCursor;
         private Activity mParent;
+        private int mPosition;
 
         public Adapter(Cursor cursor, Activity parent) {
             mCursor = cursor;
@@ -128,6 +146,7 @@ public class ArticleListActivity extends AppCompatActivity implements
 
         @Override
         public long getItemId(int position) {
+            mPosition = position;
             mCursor.moveToPosition(position);
             return mCursor.getLong(ArticleLoader.Query._ID);
         }
@@ -149,10 +168,10 @@ public class ArticleListActivity extends AppCompatActivity implements
                                     mParent
                                     , imageView
                                     , imageView.getTransitionName());
-
-                    startActivity(new Intent(Intent.ACTION_VIEW,
-                                    ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())))
-                            , options.toBundle());
+                    Intent data = new Intent(Intent.ACTION_VIEW,
+                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
+                    data.putExtra(EXTRA_CURRENT_POSITION,mPosition);
+                    startActivity(data, options.toBundle());
                 }
             });
             return vh;

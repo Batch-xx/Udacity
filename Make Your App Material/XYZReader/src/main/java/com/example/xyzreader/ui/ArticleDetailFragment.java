@@ -57,6 +57,7 @@ public class ArticleDetailFragment extends Fragment implements
     private int mStatusBarFullOpacityBottom;
     private AppBarLayout mAppBarLayout;
 
+
     private static String IS_EXPANDED = "is_expanded";
 
     /**
@@ -149,11 +150,8 @@ public class ArticleDetailFragment extends Fragment implements
         }
 
         mScrollView = (ObservableScrollView) mRootView.findViewById(R.id.scrollview);
-
-
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
         mPhotoContainerView = mRootView.findViewById(R.id.photo_container);
-
         mStatusBarColorDrawable = new ColorDrawable(0);
 
         mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
@@ -190,6 +188,9 @@ public class ArticleDetailFragment extends Fragment implements
     }
 
 
+    public ImageView getImage(){
+        return mPhotoView;
+    }
 
     static float progress(float v, float min, float max) {
         return constrain((v - min) / (max - min), 0, 1);
