@@ -11,6 +11,7 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.app.SharedElementCallback;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -21,12 +22,16 @@ import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.TextView;
 
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.example.xyzreader.data.ItemsContract;
 import com.example.xyzreader.data.UpdaterService;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * An activity representing a list of Articles. This activity has different presentations for
@@ -43,14 +48,38 @@ public class ArticleListActivity extends AppCompatActivity implements
     private Bundle mReenterBundle;
     private int mCurrentPosition;
     private int mStartingPosition;
+    private String mTransitionName;
+    private final SharedElementCallback mCallback = new SharedElementCallback() {
+        @Override
+        public void onMapSharedElements(List<String> names, Map<String, View> sharedElements) {
+            super.onMapSharedElements(names, sharedElements);
+            if(mReenterBundle != null){
+                if(mCurrentPosition != mStartingPosition){
+                    Adapter adapter = (Adapter)mRecyclerView.getAdapter();
+                    long itemId = adapter.getItemId(mCurrentPosition);
+                    ViewHolder viewHolder = (ViewHolder)mRecyclerView
+                             .findViewHolderForAdapterPosition(mCurrentPosition);
+                    if(viewHolder != null) {
+                        View view = viewHolder.thumbnailView;
+                        names.clear();
+                        names.add(mTransitionName);
+                        sharedElements.put(mTransitionName,view);
+                    }
+
+                }
+            }
+        }
+    };
+
     final static String EXTRA_STARTING_POSITION = "extra_starting_position";
     final static String EXTRA_CURRENT_POSITION = "extra_current_position";
+    final static String EXTRA_TRANSITION_NAME = "extra_transition_name";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
-
+        setExitSharedElementCallback(mCallback);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
 
@@ -129,9 +158,20 @@ public class ArticleListActivity extends AppCompatActivity implements
 
         mCurrentPosition = mReenterBundle.getInt(EXTRA_CURRENT_POSITION);
         mStartingPosition = mReenterBundle.getInt(EXTRA_STARTING_POSITION);
+        mTransitionName = mReenterBundle.getString(EXTRA_TRANSITION_NAME);
         if(mStartingPosition != mCurrentPosition){
             mRecyclerView.scrollToPosition(mCurrentPosition);
         }
+        postponeEnterTransition();
+        mRecyclerView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            @Override
+            public boolean onPreDraw() {
+                mRecyclerView.getViewTreeObserver().removeOnPreDrawListener(this);
+                mRecyclerView.requestLayout();
+                startPostponedEnterTransition();
+                return true;
+            }
+        });
     }
 
     private class Adapter extends RecyclerView.Adapter<ViewHolder> {
