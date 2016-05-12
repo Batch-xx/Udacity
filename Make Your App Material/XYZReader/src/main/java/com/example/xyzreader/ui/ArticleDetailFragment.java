@@ -2,6 +2,7 @@ package com.example.xyzreader.ui;
 
 import android.app.Fragment;
 import android.app.LoaderManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
@@ -206,6 +207,8 @@ public class ArticleDetailFragment extends Fragment implements
         }
     }
 
+
+
     private void bindViews() {
         if (mRootView == null) {
             return;
@@ -245,7 +248,9 @@ public class ArticleDetailFragment extends Fragment implements
                                         (CollapsingToolbarLayout)mRootView
                                                 .findViewById(R.id.collapsing_toolbar);
 
-                                collapsingToolbarLayout.setContentScrimColor(mMutedColor);
+                                int scrimColor = getResources().getColor(R.color.theme_primary_light);
+
+                                collapsingToolbarLayout.setContentScrimColor(scrimColor);
 
                                 TextView titleTextView =  (TextView)mRootView.findViewById(R.id.article_title);
                                 if(titleTextView!= null) {

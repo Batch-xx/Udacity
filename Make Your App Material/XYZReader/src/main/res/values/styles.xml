@@ -19,6 +19,9 @@
 
     <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowActivityTransitions">true</item>
+        <item name="android:colorPrimary">@color/theme_primary</item>
+        <item name="android:colorPrimaryDark">@color/theme_primary_dark</item>
+        <item name="android:colorAccent">@color/theme_accent</item>
     </style>
 
     <style name="Theme.Bacon.Detail">
@@ -34,6 +37,7 @@
         <item name="elevation">6dp</item>
         <item name="pressedTranslationZ">12dp</item>
         <item name="rippleColor">@android:color/white</item>
+        <item name="android:background">?android:colorAccent</item>
     </style>
 
 
