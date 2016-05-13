@@ -107,15 +107,24 @@ public class ArticleDetailActivity extends AppCompatActivity
             if (getIntent() != null && getIntent().getData() != null) {
                 mStartId = ItemsContract.Items.getItemId(getIntent().getData());
                 mSelectedItemId = mStartId;
-
                 mStartingPosition = getIntent().getIntExtra(EXTRA_CURRENT_POSITION,0);
             }
+        }else{
+            mCurrentPosition = savedInstanceState.getInt(EXTRA_CURRENT_POSITION);
+            mStartingPosition = savedInstanceState.getInt(EXTRA_STARTING_POSITION);
         }
     }
 
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
         return ArticleLoader.newAllArticlesInstance(this);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt(EXTRA_STARTING_POSITION,mStartingPosition);
+        outState.putInt(EXTRA_CURRENT_POSITION,mCurrentPosition);
+        super.onSaveInstanceState(outState);
     }
 
     @Override

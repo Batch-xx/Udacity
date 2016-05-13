@@ -88,7 +88,8 @@
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                android:titleTextColor="#ffffff"/>
+                android:titleTextColor="#ffffff"
+                android:titleTextAppearance="@style/collapsedTitle"/>
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
@@ -119,11 +120,13 @@
                     style="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/detail_inner_top_margin"
                     android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
                     android:layout_marginRight="@dimen/detail_inner_horiz_margin"
                     android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
-                    android:paddingBottom="@dimen/detail_body_bottom_margin"
-                    android:textColor="@color/ltgray"
+                    android:layout_marginBottom="@dimen/detail_body_bottom_margin"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/body_font_color"
                     android:textColorLink="@color/theme_accent"
                     android:textSize="@dimen/detail_body_text_size" />
 

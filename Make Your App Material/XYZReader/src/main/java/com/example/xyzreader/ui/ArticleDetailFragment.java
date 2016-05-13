@@ -47,7 +47,6 @@ public class ArticleDetailFragment extends Fragment implements
     private View mRootView;
     private int mMutedColor = 0xFF333333;
     private ObservableScrollView mScrollView;
-//    private DrawInsetsFrameLayout mDrawInsetsFrameLayout;
     private ColorDrawable mStatusBarColorDrawable;
 
     private int mTopInset;
@@ -130,6 +129,7 @@ public class ArticleDetailFragment extends Fragment implements
         collapsingToolbarLayout.setExpandedTitleColor(getResources()
                 .getColor(android.R.color.transparent));
         collapsingToolbarLayout.setCollapsedTitleTextColor(getResources().getColor(android.R.color.white));
+        collapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.collapsedTitle);
 
         mAppBarLayout = (AppBarLayout)mRootView.findViewById(R.id.article_detail_app_bar_layout);
 
@@ -248,9 +248,10 @@ public class ArticleDetailFragment extends Fragment implements
                                         (CollapsingToolbarLayout)mRootView
                                                 .findViewById(R.id.collapsing_toolbar);
 
-                                int scrimColor = getResources().getColor(R.color.theme_primary_light);
-
-                                collapsingToolbarLayout.setContentScrimColor(scrimColor);
+                                if(isAdded()) {
+                                    int scrimColor = getResources().getColor(R.color.theme_primary_light);
+                                    collapsingToolbarLayout.setContentScrimColor(scrimColor);
+                                }
 
                                 TextView titleTextView =  (TextView)mRootView.findViewById(R.id.article_title);
                                 if(titleTextView!= null) {
