@@ -40,7 +40,7 @@ public class ArticleDetailFragment extends Fragment implements
     private static final String TAG = "ArticleDetailFragment";
     public static final String ARG_ITEM_ID = "item_id";
     private static final float PARALLAX_FACTOR = 1.25f;
-    private static final float PERCENTAGE_TO_SHOW_TITLE_AT_TOOLBAR  = 0.9f;
+    private static final float PERCENTAGE_TO_SHOW_TITLE_AT_TOOLBAR = 0.9f;
 
     private Cursor mCursor;
     private long mItemId;
@@ -107,11 +107,11 @@ public class ArticleDetailFragment extends Fragment implements
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
-        ImageView photo = (ImageView)mRootView.findViewById(R.id.photo);
+        ImageView photo = (ImageView) mRootView.findViewById(R.id.photo);
         photo.setTransitionName("transition_image" + mItemId);
-        Toolbar toolbar = (Toolbar)mRootView.findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) mRootView.findViewById(R.id.toolbar);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,28 +124,28 @@ public class ArticleDetailFragment extends Fragment implements
 
 
         CollapsingToolbarLayout collapsingToolbarLayout =
-                (CollapsingToolbarLayout)mRootView.findViewById(R.id.collapsing_toolbar);
+                (CollapsingToolbarLayout) mRootView.findViewById(R.id.collapsing_toolbar);
 
         collapsingToolbarLayout.setExpandedTitleColor(getResources()
                 .getColor(android.R.color.transparent));
         collapsingToolbarLayout.setCollapsedTitleTextColor(getResources().getColor(android.R.color.white));
         collapsingToolbarLayout.setCollapsedTitleTextAppearance(R.style.collapsedTitle);
 
-        mAppBarLayout = (AppBarLayout)mRootView.findViewById(R.id.article_detail_app_bar_layout);
+        mAppBarLayout = (AppBarLayout) mRootView.findViewById(R.id.article_detail_app_bar_layout);
 
         mAppBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
                 int maxScroll = mAppBarLayout.getTotalScrollRange();
-                float percentage = (float)Math.abs(verticalOffset)/(float)maxScroll;
+                float percentage = (float) Math.abs(verticalOffset) / (float) maxScroll;
             }
         });
 
-        if(savedInstanceState != null){
-            if(savedInstanceState.getBoolean(IS_EXPANDED)){
-                mAppBarLayout.setExpanded(true,false);
-            }else{
-                mAppBarLayout.setExpanded(false,false);
+        if (savedInstanceState != null) {
+            if (savedInstanceState.getBoolean(IS_EXPANDED)) {
+                mAppBarLayout.setExpanded(true, false);
+            } else {
+                mAppBarLayout.setExpanded(false, false);
             }
 
         }
@@ -169,11 +169,11 @@ public class ArticleDetailFragment extends Fragment implements
         return mRootView;
     }
 
-    private void handleToolbarVisiblity(float percentage){
-        if(percentage >= PERCENTAGE_TO_SHOW_TITLE_AT_TOOLBAR){
-             //make toolbar visible
+    private void handleToolbarVisiblity(float percentage) {
+        if (percentage >= PERCENTAGE_TO_SHOW_TITLE_AT_TOOLBAR) {
+            //make toolbar visible
 
-        }else{
+        } else {
             //toolbar invisible
         }
 
@@ -181,15 +181,15 @@ public class ArticleDetailFragment extends Fragment implements
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        boolean fullyExpanded =  (mAppBarLayout.getHeight() - mAppBarLayout.getBottom()) == 0;
+        boolean fullyExpanded = (mAppBarLayout.getHeight() - mAppBarLayout.getBottom()) == 0;
 
-        outState.putBoolean(IS_EXPANDED,fullyExpanded);
+        outState.putBoolean(IS_EXPANDED, fullyExpanded);
 
         super.onSaveInstanceState(outState);
     }
 
 
-    public ImageView getImage(){
+    public ImageView getImage() {
         return mPhotoView;
     }
 
@@ -206,7 +206,6 @@ public class ArticleDetailFragment extends Fragment implements
             return val;
         }
     }
-
 
 
     private void bindViews() {
@@ -245,16 +244,16 @@ public class ArticleDetailFragment extends Fragment implements
                                 mPhotoView.setImageBitmap(imageContainer.getBitmap());
 
                                 CollapsingToolbarLayout collapsingToolbarLayout =
-                                        (CollapsingToolbarLayout)mRootView
+                                        (CollapsingToolbarLayout) mRootView
                                                 .findViewById(R.id.collapsing_toolbar);
 
-                                if(isAdded()) {
+                                if (isAdded()) {
                                     int scrimColor = getResources().getColor(R.color.theme_primary_light);
                                     collapsingToolbarLayout.setContentScrimColor(scrimColor);
                                 }
 
-                                TextView titleTextView =  (TextView)mRootView.findViewById(R.id.article_title);
-                                if(titleTextView!= null) {
+                                TextView titleTextView = (TextView) mRootView.findViewById(R.id.article_title);
+                                if (titleTextView != null) {
                                     collapsingToolbarLayout.setTitle(titleTextView.getText().toString());
                                 }
                             }
@@ -268,7 +267,7 @@ public class ArticleDetailFragment extends Fragment implements
         } else {
             mRootView.setVisibility(View.GONE);
             titleView.setText("N/A");
-            bylineView.setText("N/A" );
+            bylineView.setText("N/A");
             bodyView.setText("N/A");
         }
     }

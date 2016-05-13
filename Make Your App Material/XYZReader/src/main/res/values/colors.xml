@@ -22,7 +22,8 @@
     <color name="theme_primary_dark">#FB5621</color>
     <color name="theme_accent">#00AE84</color>
     <color name="theme_primary_light">#FF926F</color>
-    <color name="body_font_color">#212121</color>
+    <color name="body_font">#212121</color>
+    <color name="subheading">#757575</color>
     <color name="ltgray">#ffe0e0e0</color>
 
     <color name="fab_ripple">#e65b8a</color>

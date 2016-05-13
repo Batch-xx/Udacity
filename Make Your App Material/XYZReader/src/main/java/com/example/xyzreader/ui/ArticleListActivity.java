@@ -55,8 +55,8 @@ public class ArticleListActivity extends AppCompatActivity implements
             super.onMapSharedElements(names, sharedElements);
             if(mReenterBundle != null){
                 if(mCurrentPosition != mStartingPosition){
-                    Adapter adapter = (Adapter)mRecyclerView.getAdapter();
-                    long itemId = adapter.getItemId(mCurrentPosition);
+//                    Adapter adapter = (Adapter)mRecyclerView.getAdapter();
+//                    long itemId = adapter.getItemId(mCurrentPosition);
                     ViewHolder viewHolder = (ViewHolder)mRecyclerView
                              .findViewHolderForAdapterPosition(mCurrentPosition);
                     if(viewHolder != null) {
