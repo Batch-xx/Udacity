@@ -12,3 +12,7 @@ was to redesign an app to follow the Material Design guidelines and translate a 
   <li>Separate an interface into surfaces.</li>
   <li>Effectively use transitions and motion.</li>
 </ul>
+
+## Demo
+
+<img src="./art/demo.gif" width="270" height="480"/>
