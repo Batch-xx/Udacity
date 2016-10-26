@@ -5,7 +5,7 @@ This project requires a Open Weather Map API key, which you can obtain from [Ope
 android {
    ...
     buildTypes.each {
-        it.buildConfigField 'String', 'OPEN_WEATHER_MAP_API_KEY', '"Place your Open Weather Map Key here"'
+        it.buildConfigField 'String', 'OPEN_WEATHER_MAP_API_KEY', <b>'"Place your Open Weather Map Key here"'</b>
     }
 }
 </code></pre>
