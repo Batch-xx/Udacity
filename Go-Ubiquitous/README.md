@@ -1,4 +1,6 @@
 # Go-Ubiquitous
+## Features
+
 ## Setup
 This project requires a Open Weather Map API key, which you can obtain from [Open Weather Map site](https://openweathermap.org/api). After you obtain an Open Weather Map key enter it in the App build.gradle file at:
 <pre><code>
@@ -9,4 +11,5 @@ android {
     }
 }
 </code></pre>
-<b>Note:</b> Place key inside the quotes 
+<b>Note:</b> Place key inside the double quotes. 
+
