@@ -1,8 +1,9 @@
 # Go-Ubiquitous
+<img src="./wear/src/main/res/drawable/interactive.png" width="315" height="315 5 &nbsp"/>
 <img src="./wear/src/main/res/drawable/Ambient.png" width="315" height="315 &nbsp"/>
 
-<img src="./wear/src/main/res/drawable/interactive.png" width="315" height="315"/>
-## Features
+## Project Overview
+In this project, you will build a wearable watch face for Sunshine to run on an Android Wear device.
 
 ## Setup
 This project requires a Open Weather Map API key, which you can obtain from [Open Weather Map site](https://openweathermap.org/api). After you obtain an Open Weather Map key enter it in the App build.gradle file at:
