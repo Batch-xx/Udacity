@@ -1,5 +1,6 @@
 # Go-Ubiquitous
 <img src="./wear/src/main/res/drawable/Ambient.png" width="315" height="315"/>
+&nbsp
 <img src="./wear/src/main/res/drawable/interactive.png" width="315" height="315"/>
 ## Features
 
